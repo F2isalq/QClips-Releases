@@ -1,0 +1,120 @@
+{
+  "schema": 1,
+  "version": 2026102101,
+  "sites": {
+    "x": {
+      "loginUrl": "https://x.com/i/flow/login",
+      "uploadUrl": "https://x.com/compose/post",
+      "origins": ["https://x.com", "https://twitter.com"],
+      "loginUrlContains": ["/i/flow/login", "x.com/login", "/i/flow/signup", "x.com/logout"],
+      "loggedInUrlContains": ["x.com/home"],
+      "loggedIn": ["a[data-testid=\"AppTabBar_Profile_Link\"]", "[data-testid=\"SideNav_AccountSwitcher_Button\"]"],
+      "handle": {
+        "selector": ["a[data-testid=\"AppTabBar_Profile_Link\"]"],
+        "attribute": "href",
+        "pattern": "^/([A-Za-z0-9_]{1,15})$",
+        "format": "@{0}"
+      },
+      "open": [],
+      "fileInput": ["input[data-testid=\"fileInput\"]", "div[role=\"dialog\"] input[type=\"file\"]"],
+      "fields": [
+        { "selector": ["div[data-testid=\"tweetTextarea_0\"]", "div[role=\"dialog\"] div[role=\"textbox\"][contenteditable=\"true\"]"], "value": "caption", "maxLength": 280 }
+      ],
+      "success": {
+        "urlContains": [],
+        "text": ["Your post was sent"],
+        "selector": ["div[data-testid=\"toast\"] a[href*=\"/status/\"]"]
+      },
+      "postLink": { "selector": ["div[data-testid=\"toast\"] a[href*=\"/status/\"]"], "attribute": "href" },
+      "timeouts": { "page": 45, "login": 900, "step": 20, "fileInput": 30, "field": 30, "fieldUser": 600 }
+    },
+    "tiktok": {
+      "loginUrl": "https://www.tiktok.com/login",
+      "uploadUrl": "https://www.tiktok.com/tiktokstudio/upload?from=webapp",
+      "origins": ["https://www.tiktok.com", "https://tiktok.com"],
+      "loginUrlContains": ["tiktok.com/login", "tiktok.com/signup"],
+      "loggedInUrlContains": ["tiktok.com/tiktokstudio"],
+      "loggedIn": ["a[data-e2e=\"nav-profile\"]", "[data-e2e=\"profile-icon\"]"],
+      "handle": {
+        "selector": ["a[data-e2e=\"nav-profile\"]"],
+        "attribute": "href",
+        "pattern": "/@([A-Za-z0-9_.]{1,24})",
+        "format": "@{0}"
+      },
+      "open": [],
+      "fileInput": ["input[type=\"file\"][accept*=\"video\"]", "input[type=\"file\"]"],
+      "fields": [
+        { "selector": ["div.public-DraftEditor-content[contenteditable=\"true\"]", "div[contenteditable=\"true\"][role=\"combobox\"]", "div[contenteditable=\"true\"]"], "value": "caption", "replace": true, "maxLength": 2200 }
+      ],
+      "choices": [
+        { "option": "visibility", "value": "public", "steps": [
+          { "selector": ["div[data-e2e=\"video_visibility_container\"] [role=\"combobox\"]", "div.tiktok-select-selector", "div[class*=\"visibility\"] [role=\"combobox\"]"] },
+          { "selector": ["[role=\"option\"]", "div.tiktok-select-option", "li"], "text": ["Everyone", "Public", "الجميع", "عام"] }
+        ] },
+        { "option": "visibility", "value": "friends", "steps": [
+          { "selector": ["div[data-e2e=\"video_visibility_container\"] [role=\"combobox\"]", "div.tiktok-select-selector", "div[class*=\"visibility\"] [role=\"combobox\"]"] },
+          { "selector": ["[role=\"option\"]", "div.tiktok-select-option", "li"], "text": ["Friends", "Mutual friends", "الأصدقاء", "أصدقاء"] }
+        ] },
+        { "option": "visibility", "value": "private", "steps": [
+          { "selector": ["div[data-e2e=\"video_visibility_container\"] [role=\"combobox\"]", "div.tiktok-select-selector", "div[class*=\"visibility\"] [role=\"combobox\"]"] },
+          { "selector": ["[role=\"option\"]", "div.tiktok-select-option", "li"], "text": ["Only you", "Only me", "Private", "أنت فقط", "أنا فقط", "خاص"] }
+        ] },
+        { "option": "comments", "toggle": { "selector": ["[data-e2e=\"comment_switch\"] input[type=\"checkbox\"]", "input[type=\"checkbox\"][aria-label*=\"comment\" i]", "div[class*=\"comment\"] input[type=\"checkbox\"]"] } }
+      ],
+      "success": {
+        "urlContains": ["tiktok.com/tiktokstudio/content"],
+        "text": ["Your video has been uploaded", "Video published"],
+        "selector": []
+      },
+      "timeouts": { "page": 45, "login": 900, "step": 20, "fileInput": 45, "field": 60, "fieldUser": 600 }
+    },
+    "instagram": {
+      "loginUrl": "https://www.instagram.com/accounts/login/",
+      "uploadUrl": "https://www.instagram.com/",
+      "origins": ["https://www.instagram.com", "https://instagram.com"],
+      "loginUrlContains": ["/accounts/login", "/accounts/emailsignup"],
+      "loggedInUrlContains": ["/accounts/onetap"],
+      "loggedIn": ["svg[aria-label=\"New post\"]", "svg[aria-label=\"Home\"]", "a[href=\"/direct/inbox/\"]"],
+      "open": [
+        { "selector": ["svg[aria-label=\"New post\"]", "svg[aria-label=\"Create\"]"] },
+        { "selector": ["svg[aria-label=\"Post\"]"], "optional": true }
+      ],
+      "fileInput": ["div[role=\"dialog\"] input[type=\"file\"]"],
+      "fields": [
+        { "selector": ["div[aria-label^=\"Write a caption\"][contenteditable=\"true\"]", "div[role=\"dialog\"] div[role=\"textbox\"][contenteditable=\"true\"]"], "value": "caption", "maxLength": 2200, "waitsForUser": true }
+      ],
+      "success": {
+        "urlContains": [],
+        "text": ["Your reel has been shared", "Your post has been shared", "Reel shared", "Post shared"],
+        "selector": ["img[alt=\"Animated checkmark\"]"]
+      },
+      "timeouts": { "page": 45, "login": 900, "step": 20, "fileInput": 30, "field": 30, "fieldUser": 900 }
+    },
+    "youtube": {
+      "loginUrl": "https://accounts.google.com/ServiceLogin?service=youtube&continue=https%3A%2F%2Fstudio.youtube.com%2F",
+      "uploadUrl": "https://www.youtube.com/upload",
+      "origins": ["https://www.youtube.com", "https://studio.youtube.com", "https://youtube.com", "https://accounts.youtube.com", "https://accounts.google.com", "https://www.google.com"],
+      "loginUrlContains": ["accounts.google.com/"],
+      "loggedInUrlContains": ["studio.youtube.com/channel/"],
+      "loggedIn": ["ytcp-uploads-dialog", "button#avatar-btn"],
+      "open": [],
+      "fileInput": ["ytcp-uploads-file-picker input[type=\"file\"]", "input[type=\"file\"][name=\"Filedata\"]", "ytcp-uploads-dialog input[type=\"file\"]"],
+      "fields": [
+        { "selector": ["ytcp-social-suggestions-textbox#title-textarea div#textbox", "#title-textarea #textbox"], "value": "title", "replace": true, "maxLength": 100 },
+        { "selector": ["ytcp-social-suggestions-textbox#description-textarea div#textbox", "#description-textarea #textbox"], "value": "caption", "maxLength": 5000 }
+      ],
+      "choices": [
+        { "option": "visibility", "value": "public", "waitsForUser": true, "steps": [ { "selector": ["#privacy-radios tp-yt-paper-radio-button[name=\"PUBLIC\"]", "tp-yt-paper-radio-button[name=\"PUBLIC\"]"] } ] },
+        { "option": "visibility", "value": "unlisted", "waitsForUser": true, "steps": [ { "selector": ["#privacy-radios tp-yt-paper-radio-button[name=\"UNLISTED\"]", "tp-yt-paper-radio-button[name=\"UNLISTED\"]"] } ] },
+        { "option": "visibility", "value": "private", "waitsForUser": true, "steps": [ { "selector": ["#privacy-radios tp-yt-paper-radio-button[name=\"PRIVATE\"]", "tp-yt-paper-radio-button[name=\"PRIVATE\"]"] } ] }
+      ],
+      "success": {
+        "urlContains": [],
+        "text": ["Video published"],
+        "selector": []
+      },
+      "postLink": { "selector": ["ytcp-video-share-dialog a[href*=\"youtu\"]", "ytcp-video-info a[href*=\"youtu\"]"], "attribute": "href" },
+      "timeouts": { "page": 60, "login": 900, "step": 20, "fileInput": 45, "field": 60, "fieldUser": 600 }
+    }
+  }
+}
