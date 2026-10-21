@@ -8,7 +8,8 @@
 <p align="center"><img src="assets/library.webp" alt="The QClips clip library" width="100%"></p>
 
 QClips is a light Windows app that keeps an instant replay of your game, saves a clip with a hotkey
-or a voice command, and lets you trim, edit and share it in seconds. Everything runs on your PC.
+or a voice command, and lets you trim, edit, caption and share it in seconds. Everything runs on your PC.
+QClips is in English and Arabic.
 
 [العربية](#بالعربي)
 
@@ -19,7 +20,7 @@ Get the newest version from the [latest release](https://github.com/F2isalq/QCli
 - **[QClips-Setup.exe](https://github.com/F2isalq/QClips-Releases/releases/latest/download/QClips-Setup.exe)**
   (about 5 MB): the small installer. It downloads the rest while it installs.
 - **[QClips-Setup-Offline.exe](https://github.com/F2isalq/QClips-Releases/releases/latest/download/QClips-Setup-Offline.exe)**
-  (about 88 MB): everything inside, for a PC without a good connection.
+  (about 85 MB): everything inside, for a PC without a good connection.
 
 QClips installs for your user only, with no administrator rights, and keeps itself up to date. Its updates download
 only what changed.
@@ -31,7 +32,7 @@ The installers are not code-signed yet, so Windows may show "Windows protected y
 
 ## Screenshots
 
-<p align="center"><img src="assets/editor.webp" alt="The QClips editor in Simple mode" width="100%"></p>
+<p align="center"><img src="assets/editor.webp" alt="The QClips editor" width="100%"></p>
 <p align="center"><img src="assets/altz.webp" alt="The Alt+Z panel over a game" width="100%"></p>
 
 Game names and gameplay footage belong to their owners; QClips isn't affiliated with or endorsed by them.
@@ -39,19 +40,29 @@ Game names and gameplay footage belong to their owners; QClips isn't affiliated 
 ## Features
 
 - **Instant replay:** the last minutes are always kept; save them with a hotkey, from the tray or the Alt+Z panel.
-  Several save hotkeys, each with its own length, on keys or a mouse side button.
+  Several save hotkeys, each with its own length, on keys or a mouse side button. Optionally, the replay runs only
+  while a game is running.
 - **Voice commands in Arabic and English:** say a phrase ("clip it", "clip that" or your own) and QClips saves the
   length you chose for it. Recognition runs offline on your PC.
 - **Sound in sync:** sound and picture line up in every player, including Windows' own player and Discord.
 - **Separate audio tracks:** game, voice chat, microphone and any device on its own track, plus a Mixed track; a
   program's sound (Discord, Spotify, the current game) on its own track.
-- **Editor, Simple and Advanced:** trim, split, speed, freeze frame, titles, effects, filters and transitions; tracks,
-  keyframes and masks in Advanced. Export presets for Discord's 10, 25 and 50 MB limits, 1080p60 and the original
-  quality.
-- **Alt+Z panel** over your game: recent clips, a quick trim, and the main settings.
+- **Editor:** trim, split, speed, freeze frame, Auto Cut of silent parts, titles and subtitles, effects, colour
+  looks, filters and transitions, tracks, keyframes and masks. Render presets: Original, High, Discord 20 MB and
+  Discord 50 MB (two passes so the file fits).
+- **Automatic captions** in Arabic (Gulf, Saudi, Egyptian, Levantine and Iraqi, with English gaming words) and
+  English, timed word by word, with styles you can change and every line editable. Captions are made on your PC.
+- **Share** to X, TikTok, Instagram Reels and YouTube Shorts from inside QClips: trim, vertical framing, title and
+  description are prepared for you, and you press the platform's own Post button.
+- **Screenshots** of a monitor, all monitors, a window or a region, straight to your clipboard, and **copy text from
+  the screen** with Windows' own text recognition.
+- **Watch your clips** in QClips' own player, with previous and next clip.
+- **HDR monitors** are recorded right (converted to normal video), or as HDR10 if you choose.
+- **Alt+Z panel** over your game: recent clips, a quick trim, screenshots, pause/resume and the main settings.
 - **Storage page:** see your drive, move clips to another drive, name files your way, and an optional limit that
   sends the oldest clips to the Recycle Bin (favourites are kept).
-- **Recording**, a performance overlay (FPS, GPU, CPU), "clip saved" notifications, and every monitor if you want.
+- **Recording** with pause and resume, a performance overlay (FPS, GPU, CPU), "clip saved" notifications, and every
+  monitor if you want.
 - Uses your graphics card's encoder: NVIDIA NVENC, AMD AMF or Intel Quick Sync, with H.264, HEVC or AV1.
 
 ## Requirements
@@ -62,20 +73,27 @@ Game names and gameplay footage belong to their owners; QClips isn't affiliated 
 - About 250 MB for the app, plus room for your clips and the replay cache.
 - Voice commands: a one-time model download from Settings → Voice commands (about 67 MB for English, about 164 MB
   for Arabic, about 210 MB for both).
+- Captions: a one-time download of the speech model and the captions engine the first time you use them (about
+  610 MB; choosing English downloads an English model of its own, about 550 MB).
+- Sharing to a platform needs Microsoft Edge WebView2 Runtime, which comes with Windows 11.
 
 ## Privacy
 
-- **Everything stays on your PC.** No account, no cloud, no upload, no ads.
+- **Everything stays on your PC.** No QClips account, no cloud, no ads. Nothing is uploaded unless you share a clip
+  to a platform yourself.
 - **No telemetry.** QClips sends no usage data, no analytics and no crash reports. It only goes online to check for
-  and download updates from this page, and to download the voice models when you ask for them.
-- **Voice runs offline.** What the microphone hears is recognized on your PC and never leaves it; only a matched
-  phrase is written to QClips' own log.
+  and download updates from this page, to download the voice and caption files when you ask for them, and, when you
+  use sharing, to open the platform's own pages and check its list of what to look for on them (at most once a day).
+- **Voice and captions run offline.** What the microphone hears and what your clips say are recognized on your PC and
+  never leave it; only a matched voice phrase is written to QClips' own log.
+- **Your passwords stay with the platforms.** You sign in on each platform's own page; QClips never sees or keeps your
+  password, and QClips never posts for you.
 - A diagnostic report is made only when you click Copy diagnostic report, and goes only where you paste it.
 
 ## Anti-cheat safety
 
-QClips records the screen the way Windows' own tools do (Desktop Duplication) and the sound through Windows' audio
-system. It does **not** hook into games, inject anything, read or open game processes, install keyboard or mouse
+QClips records the screen the way Windows' own tools do (Windows Graphics Capture) and the sound through Windows'
+audio system. It does **not** hook into games, inject anything, read or open game processes, install keyboard or mouse
 hooks, or need administrator rights. Per-app audio also works without opening the game's process.
 
 ## Licenses and credits
@@ -90,22 +108,25 @@ THIRD-PARTY-NOTICES.txt in the install folder):
   License. **Powered by Moonshine AI.**
 - **Silero VAD** (MIT License): finds speech in the microphone sound.
 - **sherpa-onnx** (Apache License 2.0) and **ONNX Runtime** (MIT License): run the voice models.
+- Captions: the **Whisper large-v3-turbo** speech model (MIT License), its dialectal Arabic fine-tune
+  oddadmix/whisper-large-v3-turbo-arabic-dialectal-v2 (Apache License 2.0), and **whisper.cpp** and **ggml** (MIT
+  License); the license texts come with the caption files.
 - **Velopack** (MIT License): installs and updates.
-- NAudio, Serilog, SQLite, Markdig, the Windows App SDK, Win2D and the .NET runtime.
+- NAudio, Serilog, SQLite, Markdig, the Windows App SDK, WebView2, Win2D and the .NET runtime.
 
 ---
 
 ## بالعربي
 
 **QClips** برنامج خفيف لويندوز يحتفظ بآخر دقائق من لعبك، ويحفظ المقطع بزر أو بأمر صوتي، وتقدر
-تقصّه وتعدّله وتشاركه بثواني. كل شيء يشتغل على جهازك.
+تقصّه وتعدّله وتكتب له ترجمة وتشاركه بثواني. كل شيء يشتغل على جهازك، والبرنامج بالعربي والإنجليزي.
 
 ### التنزيل
 
 من [آخر إصدار](https://github.com/F2isalq/QClips-Releases/releases/latest):
 
 - **QClips-Setup.exe** (حوالي 5 ميقا): المثبّت الصغير، يحمّل الباقي وهو يثبّت.
-- **QClips-Setup-Offline.exe** (حوالي 88 ميقا): كل شيء بداخله، لجهاز اتصاله ضعيف.
+- **QClips-Setup-Offline.exe** (حوالي 85 ميقا): كل شيء بداخله، لجهاز اتصاله ضعيف.
 
 يتثبّت لحسابك بدون صلاحيات مدير، وQClips يحدّث نفسه بعدها، والتحديث يحمّل اللي تغيّر بس.
 
@@ -118,7 +139,12 @@ THIRD-PARTY-NOTICES.txt in the install folder):
 - أوامر صوتية بالعربي والإنجليزي: قل الجملة وQClips يحفظ الطول اللي اخترته لها، والتعرّف على جهازك بدون نت.
 - الصوت متزامن مع الصورة في كل مشغّل، حتى مشغّل ويندوز وديسكورد.
 - تراكات صوت منفصلة: اللعبة والمايك وكل جهاز بتراك، وصوت أي برنامج (ديسكورد، سبوتيفاي، اللعبة الحالية) بتراك لحاله.
-- محرر بوضعين Simple وAdvanced، وإعدادات تصدير جاهزة لحدود ديسكورد 10 و25 و50 ميقا.
+- محرر واحد فيه القص والسرعة والنصوص والترجمة والمؤثرات والفلاتر والانتقالات، وإعدادات تصدير جاهزة: الأصلي،
+  وعالية، وDiscord 20 MB، وDiscord 50 MB.
+- ترجمة تلقائية بالعربي (خليجي وسعودي ومصري وشامي وعراقي مع كلمات القيمنق الإنجليزية) وبالإنجليزي، كلمة بكلمة،
+  وتشتغل على جهازك.
+- مشاركة المقاطع على X وتيك توك وإنستقرام ريلز ويوتيوب شورتس من داخل QClips، وأنت اللي تضغط زر النشر.
+- لقطات شاشة (شاشة، كل الشاشات، نافذة، أو منطقة) تنسخ مباشرة للحافظة، ونسخ النص من الشاشة.
 - لوحة Alt+Z فوق اللعبة، وصفحة التخزين (نقل المقاطع، تسمية الملفات، وحد اختياري يرسل الأقدم لسلة المحذوفات والمفضلة محمية).
 - يستخدم معالج الرسوميات للترميز: NVIDIA NVENC أو AMD AMF أو Intel Quick Sync.
 
@@ -127,20 +153,22 @@ THIRD-PARTY-NOTICES.txt in the install folder):
 - ويندوز 10 إصدار 2004 أو أحدث، أو ويندوز 11، 64-بت.
 - يُفضّل كرت شاشة فيه مرمّز فيديو (NVENC أو AMF أو Quick Sync)، وبدونه يسجّل بالمعالج (x264).
 - الأوامر الصوتية تحتاج تحميل النموذج مرة وحدة من الإعدادات: حوالي 67 ميقا للإنجليزي، و164 للعربي، و210 للاثنين.
+- الترجمة التلقائية تحتاج تحميل ملفاتها مرة وحدة أول ما تستخدمها: حوالي 610 ميقا.
 
 ### الخصوصية
 
-- كل شيء يبقى على جهازك: لا حساب ولا سحابة ولا رفع.
-- لا يرسل أي بيانات استخدام ولا تحليلات. يتصل بالنت بس عشان التحديثات من هذي الصفحة، وتحميل نماذج الصوت إذا طلبتها.
-- الصوت يتعرّف عليه على جهازك وما يطلع منه، وما ينكتب بالسجل إلا الجملة اللي تطابقت.
+- كل شيء يبقى على جهازك: لا حساب QClips ولا سحابة، وما ينرفع شيء إلا إذا شاركت المقطع بنفسك.
+- لا يرسل أي بيانات استخدام ولا تحليلات. يتصل بالنت بس عشان التحديثات من هذي الصفحة، وتحميل ملفات الصوت والترجمة إذا
+  طلبتها، وصفحات المنصات لما تشارك.
+- الصوت والترجمة يشتغلون على جهازك وما يطلع منه شيء، وكلمة المرور تكتبها في صفحة المنصة نفسها وQClips ما يشوفها.
 
 ### الأمان مع أنظمة مكافحة الغش
 
-QClips يسجّل الشاشة بطريقة ويندوز نفسها، وما يحقن شيء في الألعاب، ولا يفتح عملياتها، ولا يركّب hooks للكيبورد أو
-الماوس، ولا يحتاج صلاحيات مدير.
+QClips يسجّل الشاشة بطريقة ويندوز نفسها (Windows Graphics Capture)، وما يحقن شيء في الألعاب، ولا يفتح عملياتها،
+ولا يركّب hooks للكيبورد أو الماوس، ولا يحتاج صلاحيات مدير.
 
 ### التراخيص
 
 FFmpeg (رخصة GPL، التفاصيل في THIRD-PARTY-NOTICES.txt)، ونماذج Moonshine (العربي بموجب Moonshine AI Community
-License، **Powered by Moonshine AI**)، وSilero VAD، وsherpa-onnx، وONNX Runtime، وVelopack، وغيرها في
-THIRD-PARTY-NOTICES.txt.
+License، **Powered by Moonshine AI**)، ونموذج Whisper large-v3-turbo وwhisper.cpp للترجمة (MIT)، وSilero VAD،
+وsherpa-onnx، وONNX Runtime، وVelopack، وغيرها في THIRD-PARTY-NOTICES.txt.
