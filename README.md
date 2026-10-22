@@ -20,7 +20,7 @@ Get the newest version from the [latest release](https://github.com/F2isalq/QCli
 - **[QClips-Setup.exe](https://github.com/F2isalq/QClips-Releases/releases/latest/download/QClips-Setup.exe)**
   (about 5 MB): the small installer. It downloads the rest while it installs.
 - **[QClips-Setup-Offline.exe](https://github.com/F2isalq/QClips-Releases/releases/latest/download/QClips-Setup-Offline.exe)**
-  (about 85 MB): everything inside, for a PC without a good connection.
+  (about 240 MB): everything inside, voice commands included, for a PC without a good connection.
 
 QClips installs for your user only, with no administrator rights, and keeps itself up to date. Its updates download
 only what changed.
@@ -43,7 +43,7 @@ Game names and gameplay footage belong to their owners; QClips isn't affiliated 
   Several save hotkeys, each with its own length, on keys or a mouse side button. Optionally, the replay runs only
   while a game is running.
 - **Voice commands in Arabic and English:** say a phrase ("clip it", "clip that" or your own) and QClips saves the
-  length you chose for it. Recognition runs offline on your PC.
+  length you chose for it. Recognition runs offline on your PC, and the voice models come with QClips: nothing to download.
 - **Sound in sync:** sound and picture line up in every player, including Windows' own player and Discord.
 - **Separate audio tracks:** game, voice chat, microphone and any device on its own track, plus a Mixed track; a
   program's sound (Discord, Spotify, the current game) on its own track.
@@ -70,9 +70,7 @@ Game names and gameplay footage belong to their owners; QClips isn't affiliated 
 - Windows 10 version 2004 (build 19041) or later, or Windows 11, 64-bit (x64).
 - A graphics card with a video encoder is recommended (NVIDIA NVENC, AMD AMF or Intel Quick Sync). Without one,
   QClips records with the processor (x264), which costs more CPU.
-- About 250 MB for the app, plus room for your clips and the replay cache.
-- Voice commands: a one-time model download from Settings → Voice commands (about 67 MB for English, about 164 MB
-  for Arabic, about 210 MB for both).
+- About 420 MB for the app (voice commands included), plus room for your clips and the replay cache.
 - Captions: a one-time download of the speech model and the captions engine the first time you use them (about
   610 MB; choosing English downloads an English model of its own, about 550 MB).
 - Sharing to a platform needs Microsoft Edge WebView2 Runtime, which comes with Windows 11.
@@ -82,7 +80,7 @@ Game names and gameplay footage belong to their owners; QClips isn't affiliated 
 - **Everything stays on your PC.** No QClips account, no cloud, no ads. Nothing is uploaded unless you share a clip
   to a platform yourself.
 - **No telemetry.** QClips sends no usage data, no analytics and no crash reports. It only goes online to check for
-  and download updates from this page, to download the voice and caption files when you ask for them, and, when you
+  and download updates from this page, to download the caption files when you ask for them, and, when you
   use sharing, to open the platform's own pages and check its list of what to look for on them (at most once a day).
 - **Voice and captions run offline.** What the microphone hears and what your clips say are recognized on your PC and
   never leave it; only a matched voice phrase is written to QClips' own log.
@@ -126,7 +124,7 @@ THIRD-PARTY-NOTICES.txt in the install folder):
 من [آخر إصدار](https://github.com/F2isalq/QClips-Releases/releases/latest):
 
 - **QClips-Setup.exe** (حوالي 5 ميقا): المثبّت الصغير، يحمّل الباقي وهو يثبّت.
-- **QClips-Setup-Offline.exe** (حوالي 85 ميقا): كل شيء بداخله، لجهاز اتصاله ضعيف.
+- **QClips-Setup-Offline.exe** (حوالي 240 ميقا): كل شيء بداخله مع الأوامر الصوتية، لجهاز اتصاله ضعيف.
 
 يتثبّت لحسابك بدون صلاحيات مدير، وQClips يحدّث نفسه بعدها، والتحديث يحمّل اللي تغيّر بس.
 
@@ -136,7 +134,7 @@ THIRD-PARTY-NOTICES.txt in the install folder):
 ### المزايا
 
 - إعادة فورية: آخر الدقائق محفوظة دايماً، احفظها بزر أو من الـ tray أو لوحة Alt+Z، وأكثر من زر حفظ كل واحد بطوله.
-- أوامر صوتية بالعربي والإنجليزي: قل الجملة وQClips يحفظ الطول اللي اخترته لها، والتعرّف على جهازك بدون نت.
+- أوامر صوتية بالعربي والإنجليزي: قل الجملة وQClips يحفظ الطول اللي اخترته لها، والتعرّف على جهازك بدون نت، ونماذج الصوت تجي مع البرنامج بدون تحميل.
 - الصوت متزامن مع الصورة في كل مشغّل، حتى مشغّل ويندوز وديسكورد.
 - تراكات صوت منفصلة: اللعبة والمايك وكل جهاز بتراك، وصوت أي برنامج (ديسكورد، سبوتيفاي، اللعبة الحالية) بتراك لحاله.
 - محرر واحد فيه القص والسرعة والنصوص والترجمة والمؤثرات والفلاتر والانتقالات، وإعدادات تصدير جاهزة: الأصلي،
@@ -152,13 +150,13 @@ THIRD-PARTY-NOTICES.txt in the install folder):
 
 - ويندوز 10 إصدار 2004 أو أحدث، أو ويندوز 11، 64-بت.
 - يُفضّل كرت شاشة فيه مرمّز فيديو (NVENC أو AMF أو Quick Sync)، وبدونه يسجّل بالمعالج (x264).
-- الأوامر الصوتية تحتاج تحميل النموذج مرة وحدة من الإعدادات: حوالي 67 ميقا للإنجليزي، و164 للعربي، و210 للاثنين.
+- حوالي 420 ميقا للبرنامج (مع الأوامر الصوتية)، غير مساحة المقاطع.
 - الترجمة التلقائية تحتاج تحميل ملفاتها مرة وحدة أول ما تستخدمها: حوالي 610 ميقا.
 
 ### الخصوصية
 
 - كل شيء يبقى على جهازك: لا حساب QClips ولا سحابة، وما ينرفع شيء إلا إذا شاركت المقطع بنفسك.
-- لا يرسل أي بيانات استخدام ولا تحليلات. يتصل بالنت بس عشان التحديثات من هذي الصفحة، وتحميل ملفات الصوت والترجمة إذا
+- لا يرسل أي بيانات استخدام ولا تحليلات. يتصل بالنت بس عشان التحديثات من هذي الصفحة، وتحميل ملفات الترجمة إذا
   طلبتها، وصفحات المنصات لما تشارك.
 - الصوت والترجمة يشتغلون على جهازك وما يطلع منه شيء، وكلمة المرور تكتبها في صفحة المنصة نفسها وQClips ما يشوفها.
 
